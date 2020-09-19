@@ -1,6 +1,8 @@
 import bodyParser from 'body-parser'
 import express, { Request, Response } from 'express'
 
+import { GameState, SnakeInfo, Move, Direction } from './types'
+
 const PORT = process.env.PORT || 3000
 
 const app = express()
@@ -14,8 +16,8 @@ app.post('/end', handleEnd)
 app.listen(PORT, () => console.log(`Battlesnake Server listening at http://127.0.0.1:${PORT}`))
 
 
-function handleIndex(request: Request, response: Response) {
-  var battlesnakeInfo = {
+function handleIndex(request: Request, response: Response<SnakeInfo>) {
+  const battlesnakeInfo: SnakeInfo = {
     apiversion: '1',
     author: '',
     color: '#888888',
@@ -25,18 +27,18 @@ function handleIndex(request: Request, response: Response) {
   response.status(200).json(battlesnakeInfo)
 }
 
-function handleStart(request: Request, response: Response) {
-  var gameData = request.body
+function handleStart(request: Request<{}, {}, GameState>, response: Response) {
+  const gameData = request.body
 
   console.log('START')
   response.status(200).send('ok')
 }
 
-function handleMove(request: Request, response: Response) {
-  var gameData = request.body
+function handleMove(request: Request<{}, {}, GameState>, response: Response<Move>) {
+  const gameData = request.body
 
-  var possibleMoves = ['up', 'down', 'left', 'right']
-  var move = possibleMoves[Math.floor(Math.random() * possibleMoves.length)]
+  const possibleMoves: Direction[] = ['up', 'down', 'left', 'right']
+  const move = possibleMoves[Math.floor(Math.random() * possibleMoves.length)]
 
   console.log('MOVE: ' + move)
   response.status(200).send({
@@ -44,8 +46,8 @@ function handleMove(request: Request, response: Response) {
   })
 }
 
-function handleEnd(request: Request, response: Response) {
-  var gameData = request.body
+function handleEnd(request: Request<{}, {}, GameState>, response: Response) {
+  const gameData = request.body
 
   console.log('END')
   response.status(200).send('ok')
