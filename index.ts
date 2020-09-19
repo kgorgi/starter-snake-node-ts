@@ -1,5 +1,5 @@
-const bodyParser = require('body-parser')
-const express = require('express')
+import bodyParser from 'body-parser'
+import express, { Request, Response } from 'express'
 
 const PORT = process.env.PORT || 3000
 
@@ -14,7 +14,7 @@ app.post('/end', handleEnd)
 app.listen(PORT, () => console.log(`Battlesnake Server listening at http://127.0.0.1:${PORT}`))
 
 
-function handleIndex(request, response) {
+function handleIndex(request: Request, response: Response) {
   var battlesnakeInfo = {
     apiversion: '1',
     author: '',
@@ -25,14 +25,14 @@ function handleIndex(request, response) {
   response.status(200).json(battlesnakeInfo)
 }
 
-function handleStart(request, response) {
+function handleStart(request: Request, response: Response) {
   var gameData = request.body
 
   console.log('START')
   response.status(200).send('ok')
 }
 
-function handleMove(request, response) {
+function handleMove(request: Request, response: Response) {
   var gameData = request.body
 
   var possibleMoves = ['up', 'down', 'left', 'right']
@@ -44,7 +44,7 @@ function handleMove(request, response) {
   })
 }
 
-function handleEnd(request, response) {
+function handleEnd(request: Request, response: Response) {
   var gameData = request.body
 
   console.log('END')

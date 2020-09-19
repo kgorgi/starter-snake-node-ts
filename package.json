@@ -1,23 +1,29 @@
 {
   "name": "starter-snake-node",
   "version": "1.0.0",
-  "description": "A simple Battlesnake written in JavaScript for Node.js",
-  "main": "index.js",
+  "description": "A simple Battlesnake written in TypeScript for Node.js",
+  "main": "build/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node build/index.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BattlesnakeOfficial/starter-snake-node.git"
+    "url": "git+https://github.com/kgorgi/starter-snake-node-ts.git"
   },
-  "author": "BattlesnakeOfficial",
+  "author": "kgorgi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BattlesnakeOfficial/starter-snake-node/issues"
+    "url": "https://github.com/kgorgi/starter-snake-node-ts/issues"
   },
-  "homepage": "https://github.com/BattlesnakeOfficial/starter-snake-node#readme",
+  "homepage": "https://github.com/kgorgi/starter-snake-node-ts#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.1"
   }
 }
