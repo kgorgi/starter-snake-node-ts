@@ -2,7 +2,7 @@
 
 This is a basic implementation of the [Battlesnake API](https://docs.battlesnake.com/references/api). It's a great starting point for anyone wanting to program their first Battlesnake using TypeScript. It comes ready to use with [Repl.it](https://repl.it) and provides instructions below for getting started. It can also be deployed to [Heroku](https://heroku.com), or any other cloud provider you'd like.
 
-This project is adapted from the Battlesnake's offical [JavaScript Starter Project](https://github.com/battlesnakeofficial/starter-snake-node) project. All typing documentation was copied from the offical Battlesnake [docs](https://docs.battlesnake.com/). 
+This project is copied and modified from the Battlesnake's offical [JavaScript Starter Project](https://github.com/battlesnakeofficial/starter-snake-node) project. All typing documentation was copied from the offical Battlesnake [docs](https://docs.battlesnake.com/). 
 
 ### Technologies
 
