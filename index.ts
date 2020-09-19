@@ -13,7 +13,7 @@ app.post('/start', handleStart)
 app.post('/move', handleMove)
 app.post('/end', handleEnd)
 
-app.listen(PORT, () => console.log(`Battlesnake Server listening at http://127.0.0.1:${PORT}`))
+app.listen(PORT, () => console.log(`TypeScript Battlesnake Server listening at http://127.0.0.1:${PORT}`))
 
 
 function handleIndex(request: Request, response: Response<SnakeInfo>) {
