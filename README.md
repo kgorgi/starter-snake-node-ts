@@ -33,7 +33,7 @@ This project is adapted from the Battlesnake's offical [JavaScript Starter Proje
 4. Once your Repl is ready to run, click `Run ▶️` at the top of the screen. You should see Express (and any other dependencies) being installed. Once installation is complete, your Battlesnake server will start and you should see the following:
 
     ```
-    Battlesnake Server listening at http://127.0.0.1:3000
+    TypeScript Battlesnake Server listening at http://127.0.0.1:3000
     ```
 
 5. Above the terminal window you'll see the live output from your Battlesnake server, including its URL. That URL will be the URL used to create your Battlesnake in the next step. If you visit that URL in your browser, you should see text similar to this:
