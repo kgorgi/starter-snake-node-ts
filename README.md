@@ -1,10 +1,12 @@
-# A Simple [Battlesnake](http://play.battlesnake.com) Written in JavaScript for Node.js
+# A Simple [Battlesnake](http://play.battlesnake.com) Written in TypeScript for Node.js
 
-This is a basic implementation of the [Battlesnake API](https://docs.battlesnake.com/references/api). It's a great starting point for anyone wanting to program their first Battlesnake using JavaScript. It comes ready to use with [Repl.it](https://repl.it) and provides instructions below for getting started. It can also be deployed to [Heroku](https://heroku.com), or any other cloud provider you'd like.
+This is a basic implementation of the [Battlesnake API](https://docs.battlesnake.com/references/api). It's a great starting point for anyone wanting to program their first Battlesnake using TypeScript. It comes ready to use with [Repl.it](https://repl.it) and provides instructions below for getting started. It can also be deployed to [Heroku](https://heroku.com), or any other cloud provider you'd like.
+
+This project is adapted from the Battlesnake's offical [JavaScript Starter Project](https://github.com/battlesnakeofficial/starter-snake-node) project. All typing documentation was copied from the offical Battlesnake [docs](https://docs.battlesnake.com/). 
 
 ### Technologies
 
-* [JavaScript](https://www.javascript.com/)
+* [TypeScript](https://www.typescriptlang.org/)
 * [Node.js](https://nodejs.dev/)
 * [Express](https://expressjs.com/)
 
@@ -20,11 +22,11 @@ This is a basic implementation of the [Battlesnake API](https://docs.battlesnake
 
 ## Running Your Battlesnake on [Repl.it](https://repl.it)
 
-[![Run on Repl.it](https://repl.it/badge/github/BattlesnakeOfficial/starter-snake-node)](https://repl.it/github/BattlesnakeOfficial/starter-snake-node)
+[![Run on Repl.it](https://repl.it/badge/github/kgorgi/starter-snake-node-ts)](https://repl.it/github/kgorgi/starter-snake-node-ts)
 
 1. Login to your [Repl.it](https://repl.it) account.
 
-2. Click the 'Run on Repl.it' button above, or visit the following URL: https://repl.it/github/BattlesnakeOfficial/starter-snake-node.
+2. Click the 'Run on Repl.it' button above, or visit the following URL: https://repl.it/github/kgorgi/starter-snake-node-ts.
 
 3. You should see your Repl being initialized - this might take a few moments to complete.
 
@@ -70,10 +72,10 @@ Now you're ready to start customizing your Battlesnake's appearance and behavior
 
 ### Changing Appearance
 
-Locate the `handleIndex` function inside [index.js](index.js#L17). You should see a line that looks like this:
+Locate the `handleIndex` function inside [index.ts](index.ts#L20). You should see a line that looks like this:
 
-```javascript
-var battlesnakeInfo = {
+```typescript
+const battlesnakeInfo: SnakeInfo = {
   apiversion: '1',
   author: '',
   color: '#888888',
@@ -124,7 +126,7 @@ Once you have completed these steps you'll be ready to compete live against othe
 
 * Keeping your Repl open in a second window while games are running is helpful for watching server activity and debugging any problems with your Battlesnake.
 
-* You can use the JavaScript [console.log function](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) to output information to your server logs. This is very useful for debugging logic in your code during Battlesnake games.
+* You can use the [console.log function](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) to output information to your server logs. This is very useful for debugging logic in your code during Battlesnake games.
 
 * Review the [Battlesnake API Docs](https://docs.battlesnake.com/references/api) to learn what information is provided with each command.
 
