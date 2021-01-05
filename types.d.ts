@@ -11,7 +11,7 @@ export interface Game {
      * Information about the ruleset being used to run this game.
      * Example: {"name": "standard", "version": "v1.2.3"}
      */
-    ruleset?: { [ruleName: string]: string }
+    ruleset?: { name: string; version: string }
 
     /**
      * How much time your snake has to respond to
