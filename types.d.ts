@@ -1,3 +1,5 @@
+import { Request } from 'express'
+
 export interface Game {
     /**
      * A unique identifier for this Game.
@@ -268,3 +270,5 @@ export interface Move {
      */
     shout?: string
 }
+
+export type GameRequest = Request<{}, {}, GameState>
