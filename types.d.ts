@@ -21,7 +21,7 @@ export interface Game {
     timeout: number
 }
 
-export interface Point {
+export interface Coordinates {
     /**
      * An x-coordinate on the board (integer).
      * Example: 1
@@ -57,7 +57,7 @@ export interface Snake {
     /** Array of coordinates representing this Battlesnake's location on the game board.
      * This array is ordered from head to tail.
      * Example: [{"x": 0, "y": 0}, ..., {"x": 2, "y": 0}] */
-    body: Point[]
+    body: Coordinates[]
 
     /**
      * The previous response time of this Battlesnake, in milliseconds.
@@ -71,7 +71,7 @@ export interface Snake {
      * Equivalent to the first element of the body array.
      * Example: {"x": 0, "y": 0}
      */
-    head: Point
+    head: Coordinates
 
     /**
      * Length of this Battlesnake from head to tail.
@@ -111,14 +111,14 @@ export interface Board {
      * Array of coordinates representing food locations on the game board.
      * Example: [{"x": 5, "y": 5}, ..., {"x": 2, "y": 6}]
      */
-    food: Point[]
+    food: Coordinates[]
 
     /**
      * Array of coordinates representing hazardous locations on the game board.
      * These will only appear in some game modes.
      * Example: [{"x": 0, "y": 0}, ..., {"x": 0, "y": 1}]
      */
-    harzards: Point[]
+    harzards: Coordinates[]
 
     /**
      * Array of Battlesnake Objects representing all Battlesnakes
@@ -230,6 +230,11 @@ export interface SnakeInfo {
      * See battlesnake.io docs for tail images.
      * Example: "default" */
     tail?: Tails
+
+    /**
+     * A version number or tag for your snake.
+     */
+    version?: string
 }
 
 export interface GameState {
