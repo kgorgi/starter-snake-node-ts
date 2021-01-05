@@ -85,7 +85,7 @@ export interface Snake {
     shout: string
 
     /**
-     * The squad that the Battlesnake belongs to. 
+     * The squad that the Battlesnake belongs to.
      * Used to identify squad members in Squad Mode games.
      * Example: "1"
      */
@@ -126,8 +126,14 @@ export interface Board {
     snakes: Snake[]
 }
 
+type Heads =
+    | StandardHeads
+    | WinterClassic2019Heads
+    | StayHomeAndCodeHeads
+    | FallLeague2020Heads
+
 type StandardHeads =
-      'default'
+    | 'default'
     | 'beluga'
     | 'bendr'
     | 'dead'
@@ -136,9 +142,13 @@ type StandardHeads =
     | 'pixel'
     | 'sand-worm'
     | 'safe'
+    | 'shades'
+    | 'silly'
+    | 'smile'
+    | 'tongue'
 
 type WinterClassic2019Heads =
-    'bwc-bonhomme'
+    | 'bwc-bonhomme'
     | 'bwc-earmuffs'
     | 'bwc-rudolph'
     | 'bwc-scarf'
@@ -147,13 +157,21 @@ type WinterClassic2019Heads =
     | 'bwc-snowman'
 
 type StayHomeAndCodeHeads =
-    'shac-caffeine'
+    | 'shac-caffeine'
     | 'shac-gamer'
     | 'shac-workout'
     | 'shac-tiger-king'
 
+type FallLeague2020Heads = 'bfl-jackolantern' | 'bfl-pumpkin'
+
+type Tails =
+    | StandardTails
+    | WinterClassic2019Tails
+    | StayHomeAndCodeTails
+    | FallLeague202Tails
+
 type StandardTails =
-    'default'
+    | 'default'
     | 'block-bum'
     | 'bolt'
     | 'curled'
@@ -167,16 +185,18 @@ type StandardTails =
     | 'small-rattle'
 
 type WinterClassic2019Tails =
-    'bwc-bonhomme'
+    | 'bwc-bonhomme'
     | 'bwc-flake'
     | 'bwc-ice-skate'
     | 'bwc-present'
-   
+
 type StayHomeAndCodeTails =
-    'shac-coffee'
+    | 'shac-coffee'
     | 'shac-mouse'
     | 'shac-weight'
     | 'shac-tiger-tail'
+
+type FallLeague202Tails = 'bfl-leaf'
 
 export interface SnakeInfo {
     /**
@@ -184,12 +204,12 @@ export interface SnakeInfo {
      * Example: "1"
      */
     apiversion: string
-   
+
     /** Username of the author of this Battlesnake.
      * If provided, this will be used to verify ownership.
      * Example: "BattlesnakeOfficial" */
     author?: string
-   
+
     /**
      * Hex color code used to display this Battlesnake.
      * Must start with "#" and be 7 characters long.
@@ -201,13 +221,13 @@ export interface SnakeInfo {
      * See battlesnake.io docs for head images.
      * Example: "default"
      */
-    head?: StandardHeads | WinterClassic2019Heads | StayHomeAndCodeHeads
-   
+    head?: Heads
+
     /**
      * Displayed tail of this Battlesnake.
      * See battlesnake.io docs for tail images.
      * Example: "default" */
-    tail?: StandardTails | WinterClassic2019Tails | StayHomeAndCodeTails
+    tail?: Tails
 }
 
 export interface GameState {
@@ -232,7 +252,7 @@ export interface GameState {
     you: Battlesnake
 }
 
-export type Direction =  'up' | 'left' | 'down' | 'right'
+export type Direction = 'up' | 'left' | 'down' | 'right'
 export interface Move {
     /**
      * Your Battlesnake's move for this turn.
