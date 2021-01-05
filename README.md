@@ -2,23 +2,19 @@
 
 This is a basic implementation of the [Battlesnake API](https://docs.battlesnake.com/references/api). It's a great starting point for anyone wanting to program their first Battlesnake using TypeScript. It comes ready to use with [Repl.it](https://repl.it) and provides instructions below for getting started. It can also be deployed to [Heroku](https://heroku.com), or any other cloud provider you'd like.
 
-This project is copied and modified from the Battlesnake's offical [JavaScript Starter Project](https://github.com/battlesnakeofficial/starter-snake-node) project. All typing documentation was copied from the offical Battlesnake [docs](https://docs.battlesnake.com/). 
+This project is copied and modified from the Battlesnake's offical [JavaScript Starter Project](https://github.com/battlesnakeofficial/starter-snake-node) project. All typing documentation was copied from the offical Battlesnake [docs](https://docs.battlesnake.com/).
 
 ### Technologies
 
-* [TypeScript](https://www.typescriptlang.org/)
-* [Node.js](https://nodejs.dev/)
-* [Express](https://expressjs.com/)
-
-
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Node.js](https://nodejs.dev/)
+-   [Express](https://expressjs.com/)
 
 ## Prerequisites
 
-* [Battlesnake Account](https://play.battlesnake.com)
-* [Repl.it Account](https://repl.it)
-* [GitHub Account](https://github.com) (Optional)
-
-
+-   [Battlesnake Account](https://play.battlesnake.com)
+-   [Repl.it Account](https://repl.it)
+-   [GitHub Account](https://github.com) (Optional)
 
 ## Running Your Battlesnake on [Repl.it](https://repl.it)
 
@@ -46,8 +42,6 @@ This means your Battlesnake is running correctly on Repl.it.
 
 **At this point your Battlesnake is live and ready to enter games!**
 
-
-
 ## Registering Your Battlesnake and Creating Your First Game
 
 1. Sign in to [play.battlesnake.com](https://play.battlesnake.com/login/).
@@ -64,8 +58,6 @@ Repeat steps 3 and 4 every time you want to see how your Battlesnake behaves. It
 
 **At this point you should have a registered Battlesnake and be able to create games!**
 
-
-
 ## Customizing Your Battlesnake
 
 Now you're ready to start customizing your Battlesnake's appearance and behavior.
@@ -76,11 +68,11 @@ Locate the `handleIndex` function inside [index.ts](index.ts#L20). You should se
 
 ```typescript
 const battlesnakeInfo: SnakeInfo = {
-  apiversion: '1',
-  author: '',
-  color: '#888888',
-  head: 'default',
-  tail: 'default'
+    apiversion: '1',
+    author: '',
+    color: '#888888',
+    head: 'default',
+    tail: 'default',
 }
 ```
 
@@ -92,7 +84,7 @@ Whenever you update these values, go to the page for your Battlesnake and select
 
 On every turn of each game your Battlesnake receives information about the game board and must decide its next move.
 
-Locate the `handleMove` function inside [index.js](index.js#L35). Possible moves are "up", "down", "left", or "right". To start your Battlesnake will choose a move randomly. Your goal as a developer is to read information sent to you about the board (available in the `gameData` variable) and decide where your Battlesnake should move next.
+Locate the `handleMove` function inside [index.ts](index.ts#L40). Possible moves are "up", "down", "left", or "right". To start your Battlesnake will choose a move randomly. Your goal as a developer is to read information sent to you about the board (available in the `gameData` variable) and decide where your Battlesnake should move next.
 
 See the [Battlesnake Game Rules](https://docs.battlesnake.com/references/rules) for more information on playing the game, moving around the board, and improving your algorithm.
 
@@ -104,8 +96,6 @@ Once the Repl has restarted you can [create a new game](https://play.battlesnake
 
 **At this point you should feel comfortable making changes to your code and starting new Battlesnake games to test those changes!**
 
-
-
 ## Developing Your Battlesnake Further
 
 Now you have everything you need to start making your Battlesnake super smart!
@@ -114,25 +104,22 @@ Now you have everything you need to start making your Battlesnake super smart!
 
 Here are some simple goals to help you develop your Battlesnake early on. Completing these will make your Battlesnake competitive against other Battlesnakes in multi-player games.
 
-- [ ] Avoid colliding with walls
-- [ ] Avoid colliding with yourself
-- [ ] Try to move towards food
-- [ ] Avoid colliding with other snakes
+-   [ ] Avoid colliding with walls
+-   [ ] Avoid colliding with yourself
+-   [ ] Try to move towards food
+-   [ ] Avoid colliding with other snakes
 
 Once you have completed these steps you'll be ready to compete live against other Battlesnakes and start exploring and implementing more complex strategies.
 
-
 ### Helpful Tips
 
-* Keeping your Repl open in a second window while games are running is helpful for watching server activity and debugging any problems with your Battlesnake.
+-   Keeping your Repl open in a second window while games are running is helpful for watching server activity and debugging any problems with your Battlesnake.
 
-* You can use the [console.log function](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) to output information to your server logs. This is very useful for debugging logic in your code during Battlesnake games.
+-   You can use the [console.log function](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) to output information to your server logs. This is very useful for debugging logic in your code during Battlesnake games.
 
-* Review the [Battlesnake API Docs](https://docs.battlesnake.com/references/api) to learn what information is provided with each command.
+-   Review the [Battlesnake API Docs](https://docs.battlesnake.com/references/api) to learn what information is provided with each command.
 
-* When viewing a Battlesnake game you can pause playback and step forward/backward one frame at a time. If you review your logs at the same time, you can see what decision your Battlesnake made on each turn.
-
-
+-   When viewing a Battlesnake game you can pause playback and step forward/backward one frame at a time. If you review your logs at the same time, you can see what decision your Battlesnake made on each turn.
 
 ## Joining a Battlesnake Arena
 
@@ -140,15 +127,11 @@ Once you've made your Battlesnake behave and survive on its own, you can enter i
 
 Arenas will regularly create new games and rank Battlesnakes based on their results. They're a good way to get regular feedback on how well your Battlesnake is performing, and a fun way to track your progress as you develop your algorithm.
 
-
-
 ## (Optional) Using a Cloud Provider
 
 As your Battlesnake gets more complex, it might make sense to move it to a dedicated hosting provider such as Heroku or AWS. We suggest choosing a platform you're familiar with, or one you'd be interested in learning more about.
 
 If you have questions or ideas, our developer community on [Slack](https://play.battlesnake.com/slack) and [Discord](https://play.battlesnake.com/discord) will be able to help out.
-
-
 
 ## (Optional) Running Your Battlesnake Locally
 
@@ -160,9 +143,7 @@ npm start
 
 **Note:** You cannot create games on [play.battlesnake.com](https://play.battlesnake.com) using a locally running Battlesnake unless you install and use a port forwarding tool like [ngrok](https://ngrok.com/).
 
-
 ---
-
 
 ### Questions?
 
