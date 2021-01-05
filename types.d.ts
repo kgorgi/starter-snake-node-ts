@@ -230,6 +230,11 @@ export interface SnakeInfo {
      * See battlesnake.io docs for tail images.
      * Example: "default" */
     tail?: Tails
+
+    /**
+     * A version number or tag for your snake.
+     */
+    version?: string
 }
 
 export interface GameState {
