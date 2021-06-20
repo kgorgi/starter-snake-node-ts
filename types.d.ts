@@ -128,78 +128,6 @@ export interface Board {
     snakes: Snake[]
 }
 
-type Heads =
-    | StandardHeads
-    | WinterClassic2019Heads
-    | StayHomeAndCodeHeads
-    | FallLeague2020Heads
-
-type StandardHeads =
-    | 'default'
-    | 'beluga'
-    | 'bendr'
-    | 'dead'
-    | 'evil'
-    | 'fang'
-    | 'pixel'
-    | 'sand-worm'
-    | 'safe'
-    | 'shades'
-    | 'silly'
-    | 'smile'
-    | 'tongue'
-
-type WinterClassic2019Heads =
-    | 'bwc-bonhomme'
-    | 'bwc-earmuffs'
-    | 'bwc-rudolph'
-    | 'bwc-scarf'
-    | 'bwc-ski'
-    | 'bwc-snow-worm'
-    | 'bwc-snowman'
-
-type StayHomeAndCodeHeads =
-    | 'shac-caffeine'
-    | 'shac-gamer'
-    | 'shac-workout'
-    | 'shac-tiger-king'
-
-type FallLeague2020Heads = 'bfl-jackolantern' | 'bfl-pumpkin'
-
-type Tails =
-    | StandardTails
-    | WinterClassic2019Tails
-    | StayHomeAndCodeTails
-    | FallLeague202Tails
-
-type StandardTails =
-    | 'default'
-    | 'block-bum'
-    | 'bolt'
-    | 'curled'
-    | 'fat-rattle'
-    | 'freckle'
-    | 'hook'
-    | 'pixel'
-    | 'round-bum'
-    | 'sharp'
-    | 'skinny'
-    | 'small-rattle'
-
-type WinterClassic2019Tails =
-    | 'bwc-bonhomme'
-    | 'bwc-flake'
-    | 'bwc-ice-skate'
-    | 'bwc-present'
-
-type StayHomeAndCodeTails =
-    | 'shac-coffee'
-    | 'shac-mouse'
-    | 'shac-weight'
-    | 'shac-tiger-tail'
-
-type FallLeague202Tails = 'bfl-leaf'
-
 export interface SnakeInfo {
     /**
      * Version of the Battlesnake API implemented by this Battlesnake.
@@ -260,6 +188,7 @@ export interface GameState {
 }
 
 export type Direction = 'up' | 'left' | 'down' | 'right'
+
 export interface Move {
     /**
      * Your Battlesnake's move for this turn.
@@ -277,3 +206,166 @@ export interface Move {
 }
 
 export type GameRequest = Request<{}, {}, GameState>
+
+/**
+ * All the heads that are available in BattleSnake.
+ * Note some heads may only be used if they are awarded.
+ */
+type Heads =
+    | StandardHeads
+    | WinterClassic2019Heads
+    | StayHomeAndCodeHeads
+    | FallLeague2020Heads
+
+/**
+ * The standard set of head customizations available to everyone.
+ */
+type StandardHeads =
+    | 'default'
+    | 'beluga'
+    | 'bendr'
+    | 'dead'
+    | 'evil'
+    | 'fang'
+    | 'pixel'
+    | 'sand-worm'
+    | 'safe'
+    | 'shades'
+    | 'silly'
+    | 'smile'
+    | 'tongue'
+
+/**
+ * Released for the Battlesnake Winter Classic 2019 tournament.
+ * Available for everyone.
+ */
+type WinterClassic2019Heads =
+    | 'bonhomme'
+    | 'earmuffs'
+    | 'rudolph'
+    | 'scarf'
+    | 'ski'
+    | 'snow-worm'
+    | 'snowman'
+
+/**
+ * Released for the 2020 Stay Home and Code competition.
+ * Available for everyone.
+ */
+type StayHomeAndCodeHeads = 'caffeine' | 'gamer' | 'workout' | 'tiger-king'
+
+/**
+ * Rewards for Fall League 2020 Challenge Arenas
+ */
+type FallLeague2020Heads = 'jackolantern' | 'pumpkin'
+
+/**
+ * Awarded to members throughout the 2021 Battlesnake Competitive Season.
+ */
+type MembershipRewards2021Heads =
+    | 'alligator'
+    | 'comet'
+    | 'football'
+    | 'iguana'
+    | 'latern-fish'
+    | 'missile'
+    | 'mask'
+    | 'moto-helment'
+    | 'moustache'
+    | 'snail'
+    | 'rocket-helmet'
+    | 'space-helmet'
+
+/**
+ * Head rewards for competing in the Spring League 2021 competition.
+ */
+type SpringLeague2021Heads =
+    | 'chomp'
+    | 'pixel-round'
+    | 'rbc-bowler'
+    | 'sneaky'
+    | 'orca'
+
+/**
+ * Head rewards for Summer League 2021.
+ */
+type SummerLeague2021Heads = 'villian' | 'viper'
+
+/**
+ * All the tails that are available in BattleSnake.
+ * Note some tails may only be used if they are awarded.
+ */
+type Tails =
+    | StandardTails
+    | WinterClassic2019Tails
+    | StayHomeAndCodeTails
+    | FallLeague2020Tails
+    | MembershipRewards2021Tails
+    | SpringLeague2021Tails
+    | SummerLeague2021Tails
+
+/**
+ * The standard set of tail customizations available to everyone.
+ */
+type StandardTails =
+    | 'default'
+    | 'block-bum'
+    | 'bolt'
+    | 'curled'
+    | 'fat-rattle'
+    | 'freckle'
+    | 'hook'
+    | 'pixel'
+    | 'round-bum'
+    | 'sharp'
+    | 'skinny'
+    | 'small-rattle'
+
+/**
+ * Released for the Battlesnake Winter Classic 2019 tournament.
+ * Available for everyone.
+ */
+type WinterClassic2019Tails = 'bonhomme' | 'flake' | 'ice-skate' | 'present'
+
+/**
+ * Released for the 2020 Stay Home and Code competition.
+ * Available for everyone.
+ */
+type StayHomeAndCodeTails = 'coffee' | 'mouse' | '-weight' | 'tiger-tail'
+
+/**
+ * Rewards for Fall League 2020 Challenge Arenas.
+ */
+type FallLeague2020Tails = 'leaf' | 'pumpkin'
+
+/**
+ * Awarded to members throughout the 2021 Battlesnake Competitive Season.
+ */
+type MembershipRewards2021Tails =
+    | 'alligator'
+    | 'comet'
+    | 'fish'
+    | 'flame'
+    | 'football'
+    | 'iguana'
+    | 'ion'
+    | 'missile'
+    | 'shinny-jeans'
+    | 'snail'
+    | 'tire'
+    | 'virus'
+
+/**
+ * Tail rewards for competing in the Spring League 2021 competition.
+ */
+type SpringLeague2021Tails =
+    | 'ghost'
+    | 'pixel-round'
+    | 'rbc-necktie'
+    | 'swirl'
+    | 'swoop'
+
+/**
+ * Tail rewards for Summer League 2021.
+ */
+type SummerLeague2021Tails = 'rattle' | 'rocket'
