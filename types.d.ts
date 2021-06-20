@@ -216,6 +216,9 @@ type Heads =
     | WinterClassic2019Heads
     | StayHomeAndCodeHeads
     | FallLeague2020Heads
+    | MembershipRewards2021Heads
+    | SpringLeague2021Heads
+    | SummerLeague2021Heads
 
 /**
  * The standard set of head customizations available to everyone.
