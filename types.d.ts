@@ -126,6 +126,78 @@ export interface Board {
     snakes: Snake[]
 }
 
+export interface SnakeInfo {
+    /**
+     * Version of the Battlesnake API implemented by this Battlesnake.
+     * Example: "1"
+     */
+    apiversion: string
+
+    /** Username of the author of this Battlesnake.
+     * If provided, this will be used to verify ownership.
+     * Example: "BattlesnakeOfficial" */
+    author?: string
+
+    /**
+     * Hex color code used to display this Battlesnake.
+     * Must start with "#" and be 7 characters long.
+     * Example: "#888888" */
+    color?: string
+
+    /**
+     * Displayed head of this Battlesnake.
+     * See battlesnake.io docs for head images.
+     * Example: "default"
+     */
+    head?: Heads
+
+    /**
+     * Displayed tail of this Battlesnake.
+     * See battlesnake.io docs for tail images.
+     * Example: "default" */
+    tail?: Tails
+}
+
+export interface GameState {
+    /**
+     * Game Object describing the game being played.
+     */
+    game: Game
+
+    /**
+     * Turn number (integer) of the game being played (0 for new games).
+     */
+    turn: number
+
+    /**
+     * Board Object describing the initial state of the game board.
+     */
+    board: Board
+
+    /**
+     * Battlesnake Object describing your Battlesnake.
+     */
+    you: Battlesnake
+}
+
+export type Direction = 'up' | 'left' | 'down' | 'right'
+
+export interface Move {
+    /**
+     * Your Battlesnake's move for this turn.
+     * Valid moves are up, down, left, or right.
+     * Example: "up"
+     */
+    move: Direction
+
+    /**
+     * An optional message sent to all other Battlesnakes
+     * on the next turn. Must be 256 characters or less.
+     * Example: "I am moving up!"
+     */
+    shout?: string
+}
+
 /**
  * All the heads that are available in BattleSnake.
  * Note some heads may only be used if they are awarded.
@@ -288,75 +360,3 @@ type SpringLeague2021Tails =
  * Tail rewards for Summer League 2021.
  */
 type SummerLeague2021Tails = 'rattle' | 'rocket'
-
-export interface SnakeInfo {
-    /**
-     * Version of the Battlesnake API implemented by this Battlesnake.
-     * Example: "1"
-     */
-    apiversion: string
-
-    /** Username of the author of this Battlesnake.
-     * If provided, this will be used to verify ownership.
-     * Example: "BattlesnakeOfficial" */
-    author?: string
-
-    /**
-     * Hex color code used to display this Battlesnake.
-     * Must start with "#" and be 7 characters long.
-     * Example: "#888888" */
-    color?: string
-
-    /**
-     * Displayed head of this Battlesnake.
-     * See battlesnake.io docs for head images.
-     * Example: "default"
-     */
-    head?: Heads
-
-    /**
-     * Displayed tail of this Battlesnake.
-     * See battlesnake.io docs for tail images.
-     * Example: "default" */
-    tail?: Tails
-}
-
-export interface GameState {
-    /**
-     * Game Object describing the game being played.
-     */
-    game: Game
-
-    /**
-     * Turn number (integer) of the game being played (0 for new games).
-     */
-    turn: number
-
-    /**
-     * Board Object describing the initial state of the game board.
-     */
-    board: Board
-
-    /**
-     * Battlesnake Object describing your Battlesnake.
-     */
-    you: Battlesnake
-}
-
-export type Direction = 'up' | 'left' | 'down' | 'right'
-
-export interface Move {
-    /**
-     * Your Battlesnake's move for this turn.
-     * Valid moves are up, down, left, or right.
-     * Example: "up"
-     */
-    move: Direction
-
-    /**
-     * An optional message sent to all other Battlesnakes
-     * on the next turn. Must be 256 characters or less.
-     * Example: "I am moving up!"
-     */
-    shout?: string
-}
