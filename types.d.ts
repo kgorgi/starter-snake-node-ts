@@ -211,20 +211,28 @@ export type GameRequest = Request<{}, {}, GameState>
  * All the heads that are available in BattleSnake.
  * Note some heads may only be used if they are awarded.
  */
-type Heads =
+export type Heads =
+    | DefaultHead
     | StandardHeads
+    | BrandedCustomizationsHeads
+    | CommunityHeads
     | WinterClassic2019Heads
-    | StayHomeAndCodeHeads
+    | StayHomeAndCode2020Heads
     | FallLeague2020Heads
     | MembershipRewards2021Heads
     | SpringLeague2021Heads
     | SummerLeague2021Heads
+    | FallLeague2021Heads
+
+/**
+ * The default head.
+ */
+export type DefaultHead = 'default'
 
 /**
  * The standard set of head customizations available to everyone.
  */
-type StandardHeads =
-    | 'default'
+export type StandardHeads =
     | 'beluga'
     | 'bendr'
     | 'dead'
@@ -239,10 +247,23 @@ type StandardHeads =
     | 'tongue'
 
 /**
+ * Designed by friends and partners of Battlesnake!
+ */
+export type BrandedCustomizationsHeads = 'rbc-bowler' | 'repit-mark'
+
+/**
+ * Designed by the community for everyone to use.
+ */
+export type CommunityHeads =
+    | 'all-seeing'
+    | 'smart-caterpillar'
+    | 'trans-rights-scarf'
+
+/**
  * Released for the Battlesnake Winter Classic 2019 tournament.
  * Available for everyone.
  */
-type WinterClassic2019Heads =
+export type WinterClassic2019Heads =
     | 'bonhomme'
     | 'earmuffs'
     | 'rudolph'
@@ -255,17 +276,21 @@ type WinterClassic2019Heads =
  * Released for the 2020 Stay Home and Code competition.
  * Available for everyone.
  */
-type StayHomeAndCodeHeads = 'caffeine' | 'gamer' | 'workout' | 'tiger-king'
+export type StayHomeAndCode2020Heads =
+    | 'caffeine'
+    | 'gamer'
+    | 'workout'
+    | 'tiger-king'
 
 /**
  * Rewards for Fall League 2020 Challenge Arenas
  */
-type FallLeague2020Heads = 'jackolantern' | 'pumpkin'
+export type FallLeague2020Heads = 'jackolantern' | 'pumpkin'
 
 /**
  * Awarded to members throughout the 2021 Battlesnake Competitive Season.
  */
-type MembershipRewards2021Heads =
+export type MembershipRewards2021Heads =
     | 'alligator'
     | 'comet'
     | 'football'
@@ -282,7 +307,7 @@ type MembershipRewards2021Heads =
 /**
  * Head rewards for competing in the Spring League 2021 competition.
  */
-type SpringLeague2021Heads =
+export type SpringLeague2021Heads =
     | 'chomp'
     | 'pixel-round'
     | 'rbc-bowler'
@@ -292,25 +317,39 @@ type SpringLeague2021Heads =
 /**
  * Head rewards for Summer League 2021.
  */
-type SummerLeague2021Heads = 'villian' | 'viper'
+export type SummerLeague2021Heads = 'villian' | 'viper'
+
+/**
+ * Rewards for Fall League 2021.
+ */
+export type FallLeague2021Heads = 'happy' | 'whale'
 
 /**
  * All the tails that are available in BattleSnake.
  * Note some tails may only be used if they are awarded.
  */
-type Tails =
+export type Tails =
+    | DefaultTail
     | StandardTails
+    | BrandedCustomizationsTails
+    | CommunityTails
     | WinterClassic2019Tails
-    | StayHomeAndCodeTails
+    | StayHomeAndCode2020Tails
     | FallLeague2020Tails
     | MembershipRewards2021Tails
     | SpringLeague2021Tails
     | SummerLeague2021Tails
+    | FallLeague2021Tails
+
+/**
+ * The default tail.
+ */
+export type DefaultTail = 'default'
 
 /**
  * The standard set of tail customizations available to everyone.
  */
-type StandardTails =
+export type StandardTails =
     | 'default'
     | 'block-bum'
     | 'bolt'
@@ -325,26 +364,44 @@ type StandardTails =
     | 'small-rattle'
 
 /**
+ * Designed by friends and partners of Battlesnake!
+ */
+export type BrandedCustomizationsTails = 'rbc-necktie' | 'replit-notmark'
+
+/**
+ * Designed by the community for everyone to use.
+ */
+export type CommunityTails = 'mystic-moon'
+
+/**
  * Released for the Battlesnake Winter Classic 2019 tournament.
  * Available for everyone.
  */
-type WinterClassic2019Tails = 'bonhomme' | 'flake' | 'ice-skate' | 'present'
+export type WinterClassic2019Tails =
+    | 'bonhomme'
+    | 'flake'
+    | 'ice-skate'
+    | 'present'
 
 /**
  * Released for the 2020 Stay Home and Code competition.
  * Available for everyone.
  */
-type StayHomeAndCodeTails = 'coffee' | 'mouse' | '-weight' | 'tiger-tail'
+export type StayHomeAndCode2020Tails =
+    | 'coffee'
+    | 'mouse'
+    | '-weight'
+    | 'tiger-tail'
 
 /**
  * Rewards for Fall League 2020 Challenge Arenas.
  */
-type FallLeague2020Tails = 'leaf' | 'pumpkin'
+export type FallLeague2020Tails = 'leaf' | 'pumpkin'
 
 /**
  * Awarded to members throughout the 2021 Battlesnake Competitive Season.
  */
-type MembershipRewards2021Tails =
+export type MembershipRewards2021Tails =
     | 'alligator'
     | 'comet'
     | 'fish'
@@ -361,7 +418,7 @@ type MembershipRewards2021Tails =
 /**
  * Tail rewards for competing in the Spring League 2021 competition.
  */
-type SpringLeague2021Tails =
+export type SpringLeague2021Tails =
     | 'ghost'
     | 'pixel-round'
     | 'rbc-necktie'
@@ -371,4 +428,9 @@ type SpringLeague2021Tails =
 /**
  * Tail rewards for Summer League 2021.
  */
-type SummerLeague2021Tails = 'rattle' | 'rocket'
+export type SummerLeague2021Tails = 'rattle' | 'rocket'
+
+/**
+ * Rewards for Fall League 2021.
+ */
+export type FallLeague2021Tails = 'offroad' | 'shiny'
