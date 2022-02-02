@@ -11,7 +11,11 @@ export interface Game {
      * Information about the ruleset being used to run this game.
      * Example: {"name": "standard", "version": "v1.2.3"}
      */
-    ruleset?: { name: string; version: string }
+    ruleset?: {
+        name: string
+        version: string
+        settings: GameSettings
+    }
 
     /**
      * How much time your snake has to respond to
@@ -19,6 +23,73 @@ export interface Game {
      * Example: 500
      */
     timeout: number
+}
+
+export interface GameSettings {
+    /**
+     * Percentage chance of spawning a new food every round.
+     * Example: 25
+     */
+    foodSpawnChance: number
+
+    /**
+     * Minimum food to keep on the board every turn.
+     * Example: 1
+     */
+    minimumFood: number
+
+    /**
+     * Health damage a snake will take when ending its turn in a hazard.
+     * This stacks on top of the regular 1 damage a snake takes per turn.
+     * Example: 14
+     */
+    hazardDamagePerTurn: number
+
+    /**
+     * A string identifier that describes the type of
+     * hazard map that is used in the game.
+     * Example: "hz_spiral"
+     */
+    map: string
+
+    royale: RoyaleSettings
+
+    squad: SquadSettings
+}
+
+export interface RoyaleSettings {
+    /**
+     * The number of turns between generating
+     * new hazards (shrinking the safe board space).
+     * Example: 5
+     */
+    shrinkEveryNTurns: number
+}
+
+export interface SquadSettings {
+    /**
+     * Allow members of the same squad to move over each other without dying.
+     * Example: true
+     */
+    allowBodyCollisions: boolean
+
+    /**
+     * All squad members are eliminated when one is eliminated.
+     * Example: true
+     */
+    sharedElimination: boolean
+
+    /**
+     * All squad members share health.
+     * Example: true
+     */
+    sharedHealth: boolean
+
+    /**
+     * All squad members share length.
+     * Example: true
+     */
+    sharedLength: boolean
 }
 
 export interface Coordinates {
@@ -92,6 +163,12 @@ export interface Snake {
      * Example: "1"
      */
     squad: string
+
+    /**
+     * The collection of customizations applied to
+     * this Battlesnake that represent how it is viewed.
+     */
+    customizations: SnakeInfo
 }
 
 export interface Board {
