@@ -9,13 +9,8 @@ export interface Game {
 
     /**
      * Information about the ruleset being used to run this game.
-     * Example: {"name": "standard", "version": "v1.2.3"}
      */
-    ruleset?: {
-        name: string
-        version: string
-        settings: GameSettings
-    }
+    ruleset?: RuleSet
 
     /**
      * How much time your snake has to respond to
@@ -24,6 +19,33 @@ export interface Game {
      */
     timeout: number
 }
+
+export interface RuleSet {
+    /**
+     * Name of the ruleset being used to run this game.
+     */
+    name: GameModes
+
+    /**
+     * The release version of the Rules module used in this game.
+     * Example: "v1.2.3"
+     */
+    version: string
+
+    /**
+     * A collection of specific settings being used by the
+     * current game that control how the rules are applied.
+     */
+    settings: GameSettings
+}
+
+export type GameModes =
+    | 'standard'
+    | 'solo'
+    | 'royale'
+    | 'squad'
+    | 'constrictor'
+    | 'wrapped'
 
 export interface GameSettings {
     /**
